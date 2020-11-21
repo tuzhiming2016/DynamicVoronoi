@@ -12,6 +12,7 @@ DynamicVoronoi::DynamicVoronoi() {
 }
 
 DynamicVoronoi::~DynamicVoronoi() {
+    //清除new生成的变量
     if (data) {
         for (int x=0; x<sizeX; x++) delete[] data[x];
         delete[] data;
@@ -34,6 +35,7 @@ void DynamicVoronoi::initializeEmpty(int _sizeX, int _sizeY, bool initGridMap) {
         delete[] alternativeDiagram;
         alternativeDiagram = NULL;
     }
+
     if (initGridMap) {
         if (allocatedGridMap && gridMap) {
             for (int x=0; x<sizeX; x++) delete[] gridMap[x];
